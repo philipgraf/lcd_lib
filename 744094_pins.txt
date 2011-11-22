@@ -1,0 +1,12 @@
+                    ____________
+                   |            |
+            PD2 ---|STR     Vcc |----- +5V
+            PD1 ---|DATA     OE |--- PD3
+            PD0 ---|CP      QP4 |--- DB4
+            DB0 ---|QP0     QP5 |--- DB5
+            DB1 ---|QP1     QP6 |--- DB6
+            DB2 ---|QP2     QP7 |--- DB7
+            DB3 ---|QP3     QS2 |--
+           GND-----|GND     QS1 |--
+                   |____________|
+

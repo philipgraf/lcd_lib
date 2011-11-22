@@ -1,0 +1,20 @@
+        __
+       |  |
+ GND --| 1|    GND
+ Vcc --| 2|    +5V
+ Vee --| 3|    Brightness (0V - 5V)
+  RS --| 4|    Data / Command
+  RW --| 5|    Read / Write
+   E --| 6|___ Enable
+ DB0 --| 7|    D
+ DB1 --| 8|    
+ DB2 --| 9|    A
+ DB3 --|10|
+ DB4 --|11|    T
+ DB5 --|12| 
+ DB6 --|13|    A 
+ DB7 --|14|___     
+   A --|15|    +5V
+   K --|16|    GND
+       |__|
+

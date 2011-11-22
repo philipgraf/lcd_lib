@@ -1,0 +1,24 @@
+                   __________________
+                  |                  |
+                --|PB0           PA0 |--
+                --|PB1           PA1 |--
+                --|PB2           PA2 |--
+                --|PB3           PA3 |--
+                --|PB4           PA4 |--
+          MOSI ---|PB5           PA5 |--
+          MISO ---|PB6           PA6 |--
+           SCK ---|PB7           PA7 |--
+                --|RESET        AREF |--
+         +5V -----|Vcc           GND |----- GND
+         GND -----|GND          AVcc |--
+                --|XTAL2         PC7 |--
+                --|XTAL1         PC6 |--
+           CP  ---|PD0           PC5 |--
+           Data---|PD1           PC4 |--
+           STR ---|PD2           PC3 |--
+           OE  ---|PD3           PC2 |--
+           RS  ---|PD4           PC1 |--
+           RW  ---|PD5           PC0 |--
+           E   ---|PD6           PD7 |--- DB7
+                  |__________________|
+
