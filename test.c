@@ -4,26 +4,22 @@
  *       
  * Author: Philip Graf
  * Created: Nov 22 2011 00:10:30
- * Last Changes: Nov 22 2011 01:11:46
+ * Last Changes: Nov 25 2011 19:31:44
  * Description: Test for my own LCD-Routines
  *            
  *************************************************************************/
 
 #include <avr/io.h>
-#include "lcd_functions.h"
+#include "include/lcd_functions.h"
+#include <util/delay.h>
 
-int main(){
+int main(void){
 	
 	lcd_init();
-	
-	lcd_sendString("Test 2 ");
+while(1){
 
-	lcd_clear();
-
-
-	while(1){
-			
+			lcd_setCursor(20,1);
+		lcd_sendString("Hello again");
 	}
-
 	return 0;
 }

@@ -4,7 +4,7 @@
  *       
  * Author: Philip Graf
  * Created: Nov 21 2011 21:15:25
- * Last Changes: Nov 22 2011 01:17:57
+ * Last Changes: Nov 24 2011 23:35:49
  * Description: all necessary function to interacted with the LCD-Display
  *            
  *************************************************************************/
@@ -13,7 +13,7 @@
 #include "lcd_functions.h"
 #include <util/delay.h>
 
-void lcd_init(){
+void lcd_init(void){
 
 	_delay_ms(20);
 	
@@ -41,7 +41,7 @@ void lcd_init(){
 	_delay_ms(20);
 }
 
-void lcd_enable(){
+void lcd_enable(void){
 	LCD_PORT |= (1<< LCD_E);
 	_delay_us(20);
 	LCD_PORT &= ~(1<< LCD_E);
@@ -51,7 +51,7 @@ void lcd_sendTo(uint8_t data){
 	uint8_t i;
 	LCD_PORT |= (1<< LCD_SHIFT_STR);
 	LCD_PORT &= ~(1<<LCD_SHIFT_OE);
-	for(i=7;i>=0;i--){
+	for(i=0;i<8;i++){
 		LCD_PORT &= ~(1<<LCD_SHIFT_CLOCK);
 		if(data & (1<<i)){
 			LCD_PORT |= (1<< LCD_SHIFT_DATA);
@@ -83,12 +83,12 @@ void lcd_sendCommand(uint8_t command){
 	_delay_us(45);
 }
 
-lcd_clear(){
+void lcd_clear(void){
 	lcd_sendCommand(LCD_CLEAR_SCREEN);
 	_delay_ms(2);
 }
 
-lcd_home(){
+void lcd_home(void){
 	lcd_sendCommand(LCD_HOME);
 	_delay_ms(2);
 }
@@ -114,3 +114,11 @@ void lcd_sendString(const char *string){
 		lcd_sendChar(*string++);
 }
 
+void lcd_marquee(const char *string){
+	lcd_sendCommand(LCD_SET_ENTRY | LCD_ENTRY_INCREASE | LCD_ENTRY_SHIFT);
+	while( *string != '\0'){
+		lcd_sendChar(*string++);
+		_delay_ms(200);
+	}
+	lcd_sendCommand(LCD_SET_ENTRY | LCD_ENTRY_INCREASE | LCD_ENTRY_NOSHIFT);
+}

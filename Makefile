@@ -19,7 +19,7 @@ TARGET = test
 SRC = $(TARGET).c
 
 # add more c files
-SRC += lcd_functions.c
+SRC += include/lcd_functions.c
 
 # asm sourcecode files
 # eg. 'interrupts.S foobar/another.S'

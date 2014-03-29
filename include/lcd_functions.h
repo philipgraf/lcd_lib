@@ -1,4 +1,4 @@
-//control a HD44780 compatible LCD-Display
+//lib for a HD44780 compatible LCD-Display
 
 #ifndef LCD_FUNCTIONS_H
 #define LCD_FUNCTIONS_H
@@ -85,14 +85,15 @@
 /***********************************************************************************/
 /*******************************PROTOTYPES******************************************/
 
-void lcd_init();
-void lcd_clear();
-void lcd_home();
+void lcd_init(void);
+void lcd_clear(void);
+void lcd_home(void);
 void lcd_setCursor(uint8_t col, uint8_t row);
 void lcd_sendTo(uint8_t data);
 void lcd_sendChar(uint8_t chara);
 void lcd_sendString(const char *string);
 void lcd_sendCommand(uint8_t command);
-void lcd_enable();
+void lcd_enable(void);
+void lcd_marquee(const char *string);
 
 #endif
